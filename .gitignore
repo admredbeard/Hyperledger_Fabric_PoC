@@ -1,0 +1,40 @@
+# Package Files #
+*.war
+*.nar
+*.ear
+*.zip
+*.gz
+*.rar
+
+# PDF #
+
+*.pdf
+
+# Bibtex compile files #
+
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+
+# Log files are also ignored #
+
+*.log
+
+# python compile files
+*.pyc
+
+
+# Large folders #
+bin/
+config/
+vendor/
+caliper-benchmarks/
+
+# fabric samples #
+samples/
+fabric-samples/
+
+# Dont ignore Resources #
+!Resources/*

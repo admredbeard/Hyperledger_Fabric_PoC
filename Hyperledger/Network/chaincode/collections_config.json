@@ -1,0 +1,50 @@
+[
+    {
+    "name": "collectionPrivateRawMaterialProcessor",
+    "policy": "OR('MainOrgMSP.member', 'RawMaterialOrgMSP.member', 'ProcessorOrgMSP.member')",
+    "requiredPeerCount": 1,
+    "maxPeerCount": 3,
+    "blockToLive": 0,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": true,
+    "endorsementPolicy": {
+        "signaturePolicy": "OR('MainOrgMSP.member', 'RawMaterialOrgMSP.member', 'ProcessorOrgMSP.member')"
+    }
+    },
+    {
+    "name": "collectionPrivateProcessorProducer",
+    "policy": "OR('MainOrgMSP.member', 'ProcessorOrgMSP.member', 'ProducerOrgMSP.member')",
+    "requiredPeerCount": 1,
+    "maxPeerCount": 3,
+    "blockToLive": 0,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": true,
+    "endorsementPolicy": {
+        "signaturePolicy": "OR('MainOrgMSP.member', 'RawMaterialOrgMSP.member', 'ProcessorOrgMSP.member')"
+    }
+    },
+    {
+    "name": "collectionPrivateProducerDistributor",
+    "policy": "OR('MainOrgMSP.member', 'ProducerOrgMSP.member', 'DistributorOrgMSP.member')",
+    "requiredPeerCount": 1,
+    "maxPeerCount": 3,
+    "blockToLive": 0,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": true,
+    "endorsementPolicy": {
+        "signaturePolicy": "OR('MainOrgMSP.member', 'RawMaterialOrgMSP.member', 'ProcessorOrgMSP.member')"
+    }
+    },
+    {
+    "name": "collectionPrivateDistributorAssembler",
+    "policy": "OR('MainOrgMSP.member', 'DistributorOrgMSP.member', 'AssemblerOrgMSP.member')",
+    "requiredPeerCount": 1,
+    "maxPeerCount": 3,
+    "blockToLive":0,
+    "memberOnlyRead": true,
+    "memberOnlyWrite": true,
+    "endorsementPolicy": {
+        "signaturePolicy": "OR('MainOrgMSP.member', 'RawMaterialOrgMSP.member', 'ProcessorOrgMSP.member')"
+    }
+    }
+]

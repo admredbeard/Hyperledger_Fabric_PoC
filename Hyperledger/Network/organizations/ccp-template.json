@@ -1,0 +1,49 @@
+{
+    "name": "poc-network-${LOWERCASE}",
+    "version": "1.0.0",
+    "client": {
+        "organization": "${ORG}",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "${ORG}": {
+            "mspid": "${ORG}MSP",
+            "peers": [
+                "peer0.${LOWERCASE}.network.com"
+            ],
+            "certificateAuthorities": [
+                "ca.${LOWERCASE}.network.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.${LOWERCASE}.network.com": {
+            "url": "grpcs://localhost:${P0PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.${LOWERCASE}.network.com",
+                "hostnameOverride": "peer0.${LOWERCASE}.network.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.${LOWERCASE}.network.com": {
+            "url": "https://localhost:${CAPORT}",
+            "caName": "ca-${LOWERCASE}",
+            "tlsCACerts": {
+                "pem": ["${CAPEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}
